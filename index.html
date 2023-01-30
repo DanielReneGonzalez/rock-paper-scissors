@@ -8,7 +8,21 @@
 </head>
 <body>
     
-    
+    <script>
+        function getComputerChoice(choice) {
+            const random = Math.floor(Math.random() * choice.length);
+
+            const item = choice[random]
+
+            return item;
+            
+        }
+        const array = ['rock','paper', 'scissors'];
+
+        const result = getComputerChoice(array);
+        console.log(result)
+
+    </script>
 
 
 </body>

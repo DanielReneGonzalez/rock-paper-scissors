@@ -1,2 +1,2 @@
-# tic-tack-toe
-A simple console tic tack toe game
+# rock-paper-scissors
+A simple console rock paper scissorsgame

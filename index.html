@@ -11,7 +11,7 @@
     <script>
 
         //returns rock paper or scissors randomly//
-        
+
         function getComputerChoice(choice) {
             const random = Math.floor(Math.random() * choice.length);
 
@@ -28,6 +28,61 @@
 
 
 
+        function playRound(playerSlection, computerSelection) {
+        
+                switch (playerSlection,computerSelection) {
+                    case 'rock','rock': {
+                        return  'Its a tie!'
+                    }
+                        break;
+                    
+                    case 'rock', 'paper': {
+                        return 'paper beats rock. Try again!'
+                    }    
+                        break;
+
+                    case 'rock', 'scissors': {
+                        return 'rock beats scissors! You win!'
+                    }
+                        break;
+
+                    case 'scissors', 'rock': {
+                        return 'rock beats scissors! Try again!'
+                    }
+                        break;
+
+                    case 'scissors', 'paper': {
+                        return 'scissors beats paper! You win!'
+                    }
+                        break;
+
+                    case 'scissors', 'scissors': {
+                        return 'Its a tie!'
+                    }                      
+                        break;
+                        
+                    case 'paper', 'rock': {
+                        return 'paper beats rock! You win!'
+                    }
+                        break;
+
+                    case 'paper', 'paper': {
+                        return 'Its a tie!'
+                    }
+                        break;
+
+                    case 'paper', 'scissors': {
+                        return 'scissors beats paper! Try again!'
+                    }
+                        break;
+                }
+        }
+            
+
+        const playerSlection = 'rock';
+        const computerSelection = result
+
+        console.log(playRound(playerSlection,computerSelection))
 
     </script>
 

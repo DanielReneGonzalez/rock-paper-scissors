@@ -10,8 +10,6 @@
     
     <script>
 
-
-
         //returns rock paper or scissors randomly//
 
         function getComputerChoice(choice) {
@@ -24,77 +22,86 @@
         }
         const array = ['rock','paper', 'scissors'];
 
-        const result = getComputerChoice(array);
-        //console.log(result)//
-
+        
+        function playRound () {
+            let computerSelection = getComputerChoice(array);
+            let playerSelection = prompt('rock, paper, or scissors?');
+                if (playerSelection === '') {
+                    console.log ('You didn\'t make a choice!') ;
+                } 
+                else if (playerSelection === null) {
+                    prompt('rock, paper, or scissors?');
+                }
+                else if (playerSelection === 'rock') {
+                    console.log(check(playerSelection,computerSelection));
+                }
+                else if (playerSelection === 'paper') {
+                    console.log(check(playerSelection,computerSelection));
+                }
+                else if (playerSelection === 'scissors') {
+                    console.log(check(playerSelection,computerSelection));
+                }
+                else {
+                    prompt('rock, paper, scissors?')
+                }
+            console.log(computerSelection)
+            }
+    
 
         //player and computer selection compared and return with statment on play//
 
-        function playRound(playerSelection, computerSelection) {
-        
-                switch (playerSelection,computerSelection) {
-                    case 'rock','rock': {
-                        return  'Its a tie!'
+ 
+        function check(playerSelection, computerSelection) {
+            switch (playerSelection) {
+                case 'rock':
+                    switch(computerSelection){
+                        case 'paper': 
+                            console.log('Paper beats rock! You lose, try again!')
+                        break;
+                        case 'scissors': 
+                            console.log('Rock beats scissors! You win!')
+                        break;
+                        default: 
+                            console.log('Its a tie!')
+                        break;
                     }
-                        break;
-                    
-                    case 'rock', 'paper': {
-                        return 'Paper beats rock. Try again!'
-                    }    
-                        break;
-
-                    case 'rock', 'scissors': {
-                        return 'Rock beats scissors! You win!'
-                    }
-                        break;
-
-                    case 'scissors', 'rock': {
-                        return 'Rock beats scissors! Try again!'
-                    }
-                        break;
-
-                    case 'scissors', 'paper': {
-                        return 'Scissors beats paper! You win!'
-                    }
-                        break;
-
-                    case 'scissors', 'scissors': {
-                        return 'Its a tie!'
-                    }                      
-                        break;
-                        
-                    case 'paper', 'rock': {
-                        return 'Paper beats rock! You win!'
-                    }
-                        break;
-
-                    case 'paper', 'paper': {
-                        return 'Its a tie!'
-                    }
-                        break;
-
-                    case 'paper', 'scissors': {
-                        return 'Scissors beats paper! Try again!'
-                    }
-                        break;
-                }
-        }
             
-        const computerSelection = result;
-        const playerSelection = prompt('rock, paper, or scissors?');
-                    if (playerSelection === '' || null) {
-                        console.log ('You didn\'t make a choice!') ;
-                    } else {console.log(playRound(playerSelection,computerSelection))}
-        
-        const round = playRound(playerSelection,computerSelection)
-        
-
-
+                    break;
+                case 'paper':
+                    switch(computerSelection){
+                        case 'rock':
+                            console.log('Paper beats rock! You win!')
+                        break;
+                        case 'scissors':
+                            console.log('Scissors beats paper! You lose, try again!')
+                        break;
+                        default:
+                            console.log('Its a tie!')
+                        break;
+                    }
+                
+                    break;
+                case 'scissors':
+                    switch(computerSelection){
+                        case 'paper':
+                            console.log('Scissors beats paper! You win!')
+                        break;
+                        case 'rock':
+                            console.log('Rock beats scissors! You lose, try again!')
+                        break;
+                        default:
+                            console.log('Its a tie!')
+                        break;
+                    }
+                }
+            }
+                
         function game() {
                 for (let i = 0; i < 5; i++){
-                    ;
+                    playRound() ;
+                   
                 }
-        }
+            }
         
                 
         game()

@@ -33,7 +33,7 @@
             else {
                 playerSelection
             }
-        console.log(computerSelection)
+        //console.log(computerSelection)
         }
 
 
@@ -89,6 +89,7 @@
 
     function game() {
             for (let i = 0; i < 5; i++){
+                console.log('------------------')
                 playRound() ;
              }
     }

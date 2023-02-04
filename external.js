@@ -31,7 +31,7 @@
                 console.log(check(playerSelection,computerSelection));
             }
             else {
-                prompt('rock, paper, scissors?')
+                playerSelection
             }
         console.log(computerSelection)
         }
@@ -45,13 +45,13 @@
             case 'rock':
                 switch(computerSelection){
                     case 'paper': 
-                        return 'Paper beats rock! You lose, try again!'
+                        return 'Computer pulled paper. \n Paper beats rock! You lose, try again!'
                     break;
                     case 'scissors': 
-                        return 'Rock beats scissors! You win!'
+                        return 'Computer pulled scissors. \n Rock beats scissors! You win!'
                     break;
                     default: 
-                        return 'Its a tie!'
+                        return 'Computer pulled rock. \n Its a tie!'
                     break;
                 }
         
@@ -59,13 +59,13 @@
             case 'paper':
                 switch(computerSelection){
                     case 'rock':
-                        return 'Paper beats rock! You win!'
+                        return 'Computer pulled rock. \n Paper beats rock! You win!'
                     break;
                     case 'scissors':
-                        return 'Scissors beats paper! You lose, try again!'
+                        return 'Computer pulled scissors. \n Scissors beats paper! You lose, try again!'
                     break;
                     default:
-                        return 'Its a tie!'
+                        return 'Computer pulled paper. \n Its a tie!'
                     break;
                 }
             
@@ -73,13 +73,13 @@
             case 'scissors':
                 switch(computerSelection){
                     case 'paper':
-                        return 'Scissors beats paper! You win!'
+                        return 'Computer pulled scissors. \n Scissors beats paper! You win!'
                     break;
                     case 'rock':
-                        return 'Rock beats scissors! You lose, try again!'
+                        return 'Computer pulled rock. \n Rock beats scissors! You lose, try again!'
                     break;
                     default:
-                        return 'Its a tie!'
+                        return 'Computer pulled scissors, \n Its a tie!'
                     break;
                 }
             }

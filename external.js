@@ -100,14 +100,18 @@
 //runs game a total of five rounds//
 
     function game() {
-            for (let i = 0; i < 5; i++){
+            for (playerScore = 0; playerScore < 5;){
                 console.log('------------------')
                 console.log('Player Score', playerScore)
                 console.log('Computer Score', computerScore)
                 console.log('------------------')
                 playRound() ;
-             }
-    }
+             } if (playerScore >= computerScore){
+                console.log('You beat the computer!')
+            } else {
+                console.log('You lose! n/ Computers are taking over the world!')
+            }
+    } 
     
     
     

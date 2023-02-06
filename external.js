@@ -33,10 +33,10 @@
             else {
                 playerSelection
             }
+
         //console.log(computerSelection)
         }
-
-
+    
     //player and computer selection compared and return with statment on play//
 
 
@@ -44,12 +44,14 @@
         switch (playerSelection) {
             case 'rock':
                 switch(computerSelection){
-                    case 'paper': 
+                    case 'paper':{
+                        computerScore += 1;
                         return 'Computer pulled paper. \n Paper beats rock! You lose, try again!'
-                    break;
-                    case 'scissors': 
+                    break;}
+                    case 'scissors':{
+                         playerScore += 1;
                         return 'Computer pulled scissors. \n Rock beats scissors! You win!'
-                    break;
+                    break;}
                     default: 
                         return 'Computer pulled rock. \n Its a tie!'
                     break;
@@ -58,12 +60,14 @@
                 break;
             case 'paper':
                 switch(computerSelection){
-                    case 'rock':
+                    case 'rock':{
+                        playerScore += 1;
                         return 'Computer pulled rock. \n Paper beats rock! You win!'
-                    break;
-                    case 'scissors':
+                    break;}
+                    case 'scissors':{
+                        computerScore += 1;
                         return 'Computer pulled scissors. \n Scissors beats paper! You lose, try again!'
-                    break;
+                    break;}
                     default:
                         return 'Computer pulled paper. \n Its a tie!'
                     break;
@@ -72,12 +76,14 @@
                 break;
             case 'scissors':
                 switch(computerSelection){
-                    case 'paper':
+                    case 'paper':{
+                        playerScore += 1;
                         return 'Computer pulled scissors. \n Scissors beats paper! You win!'
-                    break;
-                    case 'rock':
+                    break;}
+                    case 'rock':{
+                        computerScore += 1;
                         return 'Computer pulled rock. \n Rock beats scissors! You lose, try again!'
-                    break;
+                    break;}
                     default:
                         return 'Computer pulled scissors, \n Its a tie!'
                     break;
@@ -85,16 +91,27 @@
             }
         }
     
+        let computerScore = 0;
+        let playerScore = 0;
+           
+       
+
+
 //runs game a total of five rounds//
 
     function game() {
             for (let i = 0; i < 5; i++){
                 console.log('------------------')
+                console.log('Player Score', playerScore)
+                console.log('Computer Score', computerScore)
+                console.log('------------------')
                 playRound() ;
              }
     }
     
-            
+    
+    
+    console.log('Welcome to a show down of Rock, Paper, or Scissors!')
     game()
 
 

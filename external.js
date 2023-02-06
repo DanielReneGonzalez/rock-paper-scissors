@@ -109,13 +109,14 @@
              } if (playerScore >= computerScore){
                 console.log('You beat the computer!')
             } else {
-                console.log('You lose! n/ Computers are taking over the world!')
+                console.log('You lose! \n Computers are taking over the world!')
             }
     } 
     
-    
-    
+
+    alert('Open your console to play!')
+    const myTimeout = setTimeout(game, 7000)
     console.log('Welcome to a show down of Rock, Paper, or Scissors!')
-    game()
+    
 
 

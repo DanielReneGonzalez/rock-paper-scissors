@@ -21,7 +21,8 @@ let scissorsButton = document.querySelector('#scissors')
         const playerSelection = 'rock';
         const computerSelection = getComputerChoice(array);
         playRound(playerSelection,computerSelection);
-        console.log(playerSelection)
+        console.log(playerSelection);
+            
     })
 
     paperButton.addEventListener('click', () => {
@@ -148,7 +149,8 @@ let scissorsButton = document.querySelector('#scissors')
     
         let computerScore = 0;
         let playerScore = 0;
-           
+        console.log('Player Score', playerScore)
+        console.log('Computer Score', computerScore)
        
 
 

@@ -11,19 +11,32 @@
     }
     const array = ['rock','paper', 'scissors'];
 
-    
-    function playRound () {
-        let computerSelection = getComputerChoice(array);
-        const buttons = document.querySelector('.button')
+let rockButton = document.querySelector('#rock')
+let paperButton = document.querySelector('#paper')
+let scissorsButton = document.querySelector('#scissors')
+    rockButton.addEventListener('click', () => {
+        const playerSelection = 'rock';
+        const computerSelection = getComputerChoice(array);
+        playRound(playerSelection,computerSelection);
+        console.log(playerSelection)
+    })
 
-        let playerSelection = prompt('rock, paper, or scissors?');
-            if (playerSelection === '') {
-                console.log ('You didn\'t make a choice!') ;
-            } 
-            else if (playerSelection === null) {
-                prompt('rock, paper, or scissors?');
-            }
-            else if (playerSelection === 'rock') {
+    paperButton.addEventListener('click', () => {
+        const playerSelection = 'paper';
+        const computerSelection = getComputerChoice(array);
+        playRound(playerSelection,computerSelection);
+        console.log(playerSelection)
+    })
+
+    scissorsButton.addEventListener('click', () => {
+        const playerSelection = 'scissors';
+        const computerSelection = getComputerChoice(array);
+        playRound(playerSelection,computerSelection);
+        console.log(playerSelection)
+    })
+    
+    function playRound (playerSelection,computerSelection) {
+            if (playerSelection === 'rock') {
                 console.log(check(playerSelection,computerSelection));
             }
             else if (playerSelection === 'paper') {
@@ -37,6 +50,7 @@
             }
 
         //console.log(computerSelection)
+        //console.log(playerSelection)
         }
     
     //player and computer selection compared and return with statment on play//
@@ -101,5 +115,24 @@
 
 //runs game a total of five rounds//
 
-  
+     /*function game() {
+            for (playerScore = 0; playerScore < 5 && computerScore < 5;){
+                console.log('------------------')
+                console.log('Player Score', playerScore)
+                console.log('Computer Score', computerScore)
+                console.log('------------------')
+                playRound() ;
+             } if (playerScore >= computerScore){
+                console.log('You beat the computer!')
+            } else {
+                console.log('You lost! \n Computers are taking over the world!')
+            }
+    } 
+    
+
+    alert('Open your console to play!')
+    const myTimeout = setTimeout(game, 7000)
+    console.log('Welcome to a show down of Rock, Paper, or Scissors!')
+    console.log('Please wait...')*/
+
 

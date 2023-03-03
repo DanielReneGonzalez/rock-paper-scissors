@@ -74,22 +74,17 @@ const results = document.createElement('div');
                 switch(computerSelection){
                     case 'paper':{
                         computerScore += 1;
-                       
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled paper. \n Paper beats rock! You lose, try again!';
                             container.appendChild(results);
                     break;}
                     case 'scissors':{
                         playerScore += 1;
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Rock beats scissors! You win!';
                             container.appendChild(results);
                     break;}
                     default: 
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Its a tie!'
                                 container.appendChild(results);
@@ -101,23 +96,17 @@ const results = document.createElement('div');
                 switch(computerSelection){
                     case 'rock':{
                         playerScore += 1;
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Paper beats rock! You win!'
                                 container.appendChild(results);
                     break;}
                     case 'scissors':{
                         computerScore += 1;
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Scissors beats paper! You lose, try again!'
                                 container.appendChild(results);
                     break;}
                     default:
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled paper. \n Its a tie!'
                                 container.appendChild(results);
@@ -129,23 +118,17 @@ const results = document.createElement('div');
                 switch(computerSelection){
                     case 'paper':{
                         playerScore += 1;
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Scissors beats paper! You win!'
                                 container.appendChild(results);
                     break;}
                     case 'rock':{
                         computerScore += 1;
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Rock beats scissors! You lose, try again!'
                                 container.appendChild(results);
                     break;}
                     default:
-                        /*const container = document.querySelector('#container')
-                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors, \n Its a tie!'
                                 container.appendChild(results);

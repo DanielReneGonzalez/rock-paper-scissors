@@ -14,40 +14,49 @@
 
 //button Eventlisteners//
 
-let rockButton = document.querySelector('#rock')
-let paperButton = document.querySelector('#paper')
-let scissorsButton = document.querySelector('#scissors')
+const rockButton = document.querySelector('#rock')
+const paperButton = document.querySelector('#paper')
+const scissorsButton = document.querySelector('#scissors')
+const container = document.querySelector('#container')
+const results = document.createElement('div');
+
+
     rockButton.addEventListener('click', () => {
         const playerSelection = 'rock';
         const computerSelection = getComputerChoice(array);
         playRound(playerSelection,computerSelection);
         console.log(playerSelection);
-            
+            const replaceResults = document.querySelector('.results')
+            replaceResults.replaceWith(results)
     })
 
     paperButton.addEventListener('click', () => {
         const playerSelection = 'paper';
         const computerSelection = getComputerChoice(array);
         playRound(playerSelection,computerSelection);
-        console.log(playerSelection)
+        console.log(playerSelection);
+        const replaceResults = document.querySelector('.results')
+            replaceResults.replaceWith(results)
     })
 
     scissorsButton.addEventListener('click', () => {
         const playerSelection = 'scissors';
         const computerSelection = getComputerChoice(array);
         playRound(playerSelection,computerSelection);
-        console.log(playerSelection)
+        console.log(playerSelection);
+        const replaceResults = document.querySelector('.results')
+            replaceResults.replaceWith(results)
     })
     
     function playRound (playerSelection,computerSelection) {
             if (playerSelection === 'rock') {
-                console.log(check(playerSelection,computerSelection));
+                return (check(playerSelection,computerSelection));
             }
             else if (playerSelection === 'paper') {
-                console.log(check(playerSelection,computerSelection));
+                return (check(playerSelection,computerSelection));
             }
             else if (playerSelection === 'scissors') {
-                console.log(check(playerSelection,computerSelection));
+                return (check(playerSelection,computerSelection));
             }
             else {
                 playerSelection
@@ -56,7 +65,6 @@ let scissorsButton = document.querySelector('#scissors')
         //console.log(computerSelection)
         //console.log(playerSelection)
         }
-    
     //player and computer selection compared and return with statment on play//
 
 
@@ -66,23 +74,22 @@ let scissorsButton = document.querySelector('#scissors')
                 switch(computerSelection){
                     case 'paper':{
                         computerScore += 1;
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                       
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled paper. \n Paper beats rock! You lose, try again!';
                             container.appendChild(results);
                     break;}
                     case 'scissors':{
                         playerScore += 1;
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Rock beats scissors! You win!';
                             container.appendChild(results);
                     break;}
                     default: 
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Its a tie!'
                                 container.appendChild(results);
@@ -94,23 +101,23 @@ let scissorsButton = document.querySelector('#scissors')
                 switch(computerSelection){
                     case 'rock':{
                         playerScore += 1;
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Paper beats rock! You win!'
                                 container.appendChild(results);
                     break;}
                     case 'scissors':{
                         computerScore += 1;
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Scissors beats paper! You lose, try again!'
                                 container.appendChild(results);
                     break;}
                     default:
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled paper. \n Its a tie!'
                                 container.appendChild(results);
@@ -122,23 +129,23 @@ let scissorsButton = document.querySelector('#scissors')
                 switch(computerSelection){
                     case 'paper':{
                         playerScore += 1;
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Scissors beats paper! You win!'
                                 container.appendChild(results);
                     break;}
                     case 'rock':{
                         computerScore += 1;
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Rock beats scissors! You lose, try again!'
                                 container.appendChild(results);
                     break;}
                     default:
-                        const container = document.querySelector('#container')
-                        const results = document.createElement('div');
+                        /*const container = document.querySelector('#container')
+                        const results = document.createElement('div');*/
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors, \n Its a tie!'
                                 container.appendChild(results);

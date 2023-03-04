@@ -23,6 +23,8 @@ let computerScore = 0;
 let playerScore = 0;
 const updateScore = document.querySelector('#playerScore' );
 const updateComputerScore = document.querySelector('#computerScore');
+const winnerMessage = document.createElement('div')
+
 
     rockButton.addEventListener('click', () => {
         const playerSelection = 'rock';
@@ -31,8 +33,21 @@ const updateComputerScore = document.querySelector('#computerScore');
         console.log(playerSelection);
             const replaceResults = document.querySelector('.results');
             replaceResults.replaceWith(results);
-            
-
+            if (playerScore == 5){
+                winnerMessage.classList.add('winner')
+                winnerMessage.textContent = 'You beat the Computer!';
+                rockButton.disabled = true;
+                paperButton.disabled = true;
+                scissorsButton.disabled = true;
+                results.replaceWith(winnerMessage)
+           } else if (computerScore == 5){
+            winnerMessage.classList.add('winner')
+            winnerMessage.textContent = 'The Computer wins! AI is taking over the world!';
+            results.replaceWith(winnerMessage);
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+           } else {}
     })
 
     paperButton.addEventListener('click', () => {
@@ -42,7 +57,21 @@ const updateComputerScore = document.querySelector('#computerScore');
         console.log(playerSelection);
         const replaceResults = document.querySelector('.results');
             replaceResults.replaceWith(results);
-            
+           if (playerScore == 5){
+            winnerMessage.classList.add('winner')
+            winnerMessage.textContent = 'You beat the Computer!';
+            results.replaceWith(winnerMessage);
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+           } else if (computerScore == 5) {
+            winnerMessage.classList.add('winner')
+            winnerMessage.textContent = 'The Computer wins! AI is taking over the world!';
+            results.replaceWith(winnerMessage);
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+           } else {}
     })
 
     scissorsButton.addEventListener('click', () => {
@@ -52,7 +81,21 @@ const updateComputerScore = document.querySelector('#computerScore');
         console.log(playerSelection);
         const replaceResults = document.querySelector('.results');
             replaceResults.replaceWith(results);
-            
+            if (playerScore == 5){
+                winnerMessage.classList.add('winner')
+                winnerMessage.textContent = 'You beat the Computer!';
+                results.replaceWith(winnerMessage);
+                rockButton.disabled = true;
+                paperButton.disabled = true;
+                scissorsButton.disabled = true;
+           } else if (computerScore == 5) {
+            winnerMessage.classList.add('winner')
+            winnerMessage.textContent = 'The Computer wins! AI is taking over the world!';
+            results.replaceWith(winnerMessage);
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+           } else {}
     })
     
     function playRound (playerSelection,computerSelection) {
@@ -152,8 +195,8 @@ const updateComputerScore = document.querySelector('#computerScore');
         }
     
     
-        console.log('Player Score', playerScore)
-        console.log('Computer Score', computerScore)
+        /*console.log('Player Score', playerScore)
+        console.log('Computer Score', computerScore)*/
        
         
 

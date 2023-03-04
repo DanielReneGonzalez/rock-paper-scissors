@@ -1,0 +1,31 @@
+#scoreContainer {
+display: flex;
+flex-direction: row;
+
+}
+
+#playerScoreBox {
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+}
+
+#playerScore {
+    display: flex;
+    align-self: center;
+}
+#playerScoreUpdate {
+    display: flex;
+    align-self: center;
+}
+
+#computerScoreBox {
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+}
+
+#computerScore {
+    display: flex;
+    align-self: center;
+}

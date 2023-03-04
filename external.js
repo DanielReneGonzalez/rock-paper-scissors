@@ -14,20 +14,25 @@
 
 //button Eventlisteners//
 
-const rockButton = document.querySelector('#rock')
-const paperButton = document.querySelector('#paper')
-const scissorsButton = document.querySelector('#scissors')
-const container = document.querySelector('#container')
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+const container = document.querySelector('#container');
 const results = document.createElement('div');
-
+let computerScore = 0;
+let playerScore = 0;
+const updateScore = document.querySelector('#playerScore' );
+const updateComputerScore = document.querySelector('#computerScore');
 
     rockButton.addEventListener('click', () => {
         const playerSelection = 'rock';
         const computerSelection = getComputerChoice(array);
         playRound(playerSelection,computerSelection);
         console.log(playerSelection);
-            const replaceResults = document.querySelector('.results')
-            replaceResults.replaceWith(results)
+            const replaceResults = document.querySelector('.results');
+            replaceResults.replaceWith(results);
+            
+
     })
 
     paperButton.addEventListener('click', () => {
@@ -35,8 +40,9 @@ const results = document.createElement('div');
         const computerSelection = getComputerChoice(array);
         playRound(playerSelection,computerSelection);
         console.log(playerSelection);
-        const replaceResults = document.querySelector('.results')
-            replaceResults.replaceWith(results)
+        const replaceResults = document.querySelector('.results');
+            replaceResults.replaceWith(results);
+            
     })
 
     scissorsButton.addEventListener('click', () => {
@@ -44,8 +50,9 @@ const results = document.createElement('div');
         const computerSelection = getComputerChoice(array);
         playRound(playerSelection,computerSelection);
         console.log(playerSelection);
-        const replaceResults = document.querySelector('.results')
-            replaceResults.replaceWith(results)
+        const replaceResults = document.querySelector('.results');
+            replaceResults.replaceWith(results);
+            
     })
     
     function playRound (playerSelection,computerSelection) {
@@ -67,6 +74,7 @@ const results = document.createElement('div');
         }
     //player and computer selection compared and return with statment on play//
 
+ 
 
     function check(playerSelection, computerSelection) {
         switch (playerSelection) {
@@ -77,12 +85,14 @@ const results = document.createElement('div');
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled paper. \n Paper beats rock! You lose, try again!';
                             container.appendChild(results);
+                            updateComputerScore.textContent = `${computerScore}`;
                     break;}
                     case 'scissors':{
                         playerScore += 1;
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Rock beats scissors! You win!';
                             container.appendChild(results);
+                            updateScore.textContent = `${playerScore}`;
                     break;}
                     default: 
                                 results.classList.add('results');
@@ -99,12 +109,14 @@ const results = document.createElement('div');
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Paper beats rock! You win!'
                                 container.appendChild(results);
+                                updateScore.textContent = `${playerScore}`;
                     break;}
                     case 'scissors':{
                         computerScore += 1;
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Scissors beats paper! You lose, try again!'
                                 container.appendChild(results);
+                                updateComputerScore.textContent = `${computerScore}`;
                     break;}
                     default:
                                 results.classList.add('results');
@@ -121,12 +133,14 @@ const results = document.createElement('div');
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled scissors. \n Scissors beats paper! You win!'
                                 container.appendChild(results);
+                                updateScore.textContent = `${playerScore}`;
                     break;}
                     case 'rock':{
                         computerScore += 1;
                                 results.classList.add('results');
                                 results.textContent = 'Computer pulled rock. \n Rock beats scissors! You lose, try again!'
                                 container.appendChild(results);
+                                updateComputerScore.textContent = `${computerScore}`;
                     break;}
                     default:
                                 results.classList.add('results');
@@ -137,22 +151,16 @@ const results = document.createElement('div');
             }
         }
     
-        let computerScore = 0;
-        let playerScore = 0;
+    
         console.log('Player Score', playerScore)
         console.log('Computer Score', computerScore)
        
-
+        
 
 //runs game a total of five rounds//
 
      /*function game() {
             for (playerScore = 0; playerScore < 5 && computerScore < 5;){
-                console.log('------------------')
-                console.log('Player Score', playerScore)
-                console.log('Computer Score', computerScore)
-                console.log('------------------')
-                playRound() ;
              } if (playerScore >= computerScore){
                 console.log('You beat the computer!')
             } else {

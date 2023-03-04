@@ -1,7 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    flex-grow: 1;
+}
+.buttonContainer {
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 #scoreContainer {
 display: flex;
 flex-direction: row;
-
+flex-grow: 1;
+margin: auto;
 }
 
 #playerScoreBox {
